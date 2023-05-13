@@ -2,6 +2,10 @@
 session_start();
 require_once 'connected.php';
 
+if (!isset($_SESSION['name'])) {
+    header("Location: index.php");
+}
+
 if(isset($_POST['update']))
 {
     $pengguna_id = $_POST['pengguna_id'];
@@ -40,6 +44,7 @@ if(isset($_POST['update']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
     <title>Detail Pengguna</title>
 </head>
 <body>
